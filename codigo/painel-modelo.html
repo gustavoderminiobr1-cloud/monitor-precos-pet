@@ -164,6 +164,10 @@
   .oferta .lj { font-size: 19px; font-weight: 800; }
   .oferta .tt { font-size: 14px; color: var(--suave); overflow-wrap: anywhere; }
   .oferta .estrelas { font-size: 15px; }
+  .oferta .fora {
+    display: inline-block; margin: 4px 0; background: var(--cinza-claro); color: var(--texto);
+    border-radius: 8px; padding: 3px 8px; font-size: 14px; font-weight: 700;
+  }
   .oferta .pr { font-size: 22px; font-weight: 900; white-space: nowrap; text-align: right; }
   .oferta a {
     display: inline-block; margin-top: 4px; background: #2563EB; color: #fff; text-decoration: none;
@@ -309,7 +313,8 @@
       const pos = ["🥇", "🥈", "🥉"][n] || (n + 1) + "º";
       h += `<div class="oferta"><div class="pos">${pos}</div>
         <div class="meio"><div class="lj">${esc(o.loja)}</div><div class="tt">${esc(o.titulo)}</div>
-        <div class="estrelas">${est}</div>${link}</div>
+        <div class="estrelas">${est}</div>
+        ${o.na_media === false ? '<div class="fora">🚫 Preço fora do normal: não entra na média</div>' : ""}${link}</div>
         <div class="pr">${reais(o.preco)}</div></div>`;
     });
     document.getElementById("janela").innerHTML = h;

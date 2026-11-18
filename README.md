@@ -24,6 +24,7 @@ Ela não usa inteligência artificial. Só pesquisa, organiza e mostra os preço
 | ⬆️ **Subiu** (vermelho) | O menor preço do mercado **subiu** desde a última semana |
 | ⬇️ **Caiu** (verde) | O menor preço do mercado **caiu** desde a última semana |
 | ➡️ **Igual** | O preço praticamente não mudou |
+| 🚫 **Preço fora do normal** | Anúncio muito mais caro ou muito mais barato que os outros (ex.: kit que não diz que é kit). Aparece na lista, mas **não entra na média** |
 | 🥇🥈🥉 **Mais procuradas na internet** | Marcas que mais aparecem e têm mais avaliações no Google. **É uma estimativa, não é venda real.** |
 
 Toque num setor para entrar e toque num produto para ver **todas as lojas**,

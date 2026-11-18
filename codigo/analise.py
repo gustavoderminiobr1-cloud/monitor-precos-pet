@@ -44,6 +44,23 @@ def _tendencia(atual, anterior):
     return "igual"
 
 
+def _mediana(valores):
+    v = sorted(valores)
+    meio = len(v) // 2
+    return v[meio] if len(v) % 2 else (v[meio - 1] + v[meio]) / 2
+
+
+def marcar_fora_do_normal(ofertas):
+    """Marca em cada oferta se ela entra na média (preço dentro do normal)."""
+    if not ofertas:
+        return
+    tipico = _mediana([o["preco"] for o in ofertas])
+    minimo = tipico * config.FORA_DO_NORMAL_ABAIXO
+    maximo = tipico * config.FORA_DO_NORMAL_ACIMA
+    for o in ofertas:
+        o["na_media"] = minimo <= o["preco"] <= maximo
+
+
 def _icones_subgrupo(subgrupo: str) -> str:
     partes = [p.strip() for p in subgrupo.split("·")]
     icone = ICONE_ANIMAL.get(partes[0], "🐾")
@@ -86,7 +103,10 @@ def montar_resumo(produtos, anuncios_historico, aviso="", contador=None, atualiz
                 break
 
         menor = min(precos) if precos else None
-        media = sum(precos) / len(precos) if precos else None
+        # A média ignora preços fora do normal (ex.: kits que não dizem que são kits)
+        marcar_fora_do_normal(ofertas)
+        precos_media = [o["preco"] for o in ofertas if o["na_media"]]
+        media = sum(precos_media) / len(precos_media) if precos_media else None
         sinal, diferenca = _sinal(p.meu_preco, media)
         imagem = next((o["imagem"] for o in ofertas if o["imagem"]), "")
 
@@ -102,7 +122,7 @@ def montar_resumo(produtos, anuncios_historico, aviso="", contador=None, atualiz
             "menor_anterior": menor_anterior,
             "data_anterior": _data_br(data_anterior) if data_anterior else "",
             "tendencia": _tendencia(menor, menor_anterior),
-            "ofertas": [{k: o[k] for k in ("titulo", "loja", "preco", "nota", "avaliacoes", "link", "imagem")}
+            "ofertas": [{k: o[k] for k in ("titulo", "loja", "preco", "nota", "avaliacoes", "link", "imagem", "na_media")}
                         for o in ofertas],
         })
         resumo_produtos.append(item)

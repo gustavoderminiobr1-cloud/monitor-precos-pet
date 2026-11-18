@@ -63,6 +63,12 @@ TOLERANCIA_AMARELO = 0.10  # 10%
 # Variação mínima para mostrar seta de tendência (1% = evita setas por centavos)
 VARIACAO_MINIMA_SETA = 0.01
 
+# Preços "fora do normal" não entram na MÉDIA (continuam aparecendo na lista de lojas).
+# Normal = entre metade e 1,5 vez o preço típico (a mediana).
+# Ex.: preço típico R$ 23 -> entram na média os preços de R$ 11,50 a R$ 34,50.
+FORA_DO_NORMAL_ABAIXO = 0.5
+FORA_DO_NORMAL_ACIMA = 1.5
+
 # ---------------------------------------------------------------
 # Fuso horário de Brasília (o Brasil não tem mais horário de verão)
 # ---------------------------------------------------------------

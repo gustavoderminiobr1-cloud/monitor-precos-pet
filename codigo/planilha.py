@@ -64,13 +64,13 @@ def gerar_planilha(resumo, historico, pesquisas, arquivo):
 
     # ---- Resultados ----
     ws = _aba(wb, "Resultados", ["Produto", "Posição", "Anúncio", "Loja", "Preço", "Nota",
-                                 "Avaliações", "Link"], [40, 8, 60, 22, 12, 7, 11, 50])
+                                 "Avaliações", "Entra na média", "Link"], [40, 8, 60, 22, 12, 7, 11, 14, 50])
     for p in resumo["produtos"]:
         for i, o in enumerate(p.get("ofertas", []), 1):
             ws.append([p["nome"], i, o["titulo"], o["loja"], o["preco"], o["nota"],
-                       o["avaliacoes"], o["link"]])
+                       o["avaliacoes"], "sim" if o["na_media"] else "não (fora do normal)", o["link"]])
             if o["link"]:
-                ws.cell(row=ws.max_row, column=8).hyperlink = o["link"]
+                ws.cell(row=ws.max_row, column=9).hyperlink = o["link"]
     _reais(ws, "E")
 
     # ---- Marcas ----
