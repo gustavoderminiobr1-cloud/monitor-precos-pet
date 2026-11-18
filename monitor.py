@@ -154,6 +154,14 @@ def main():
 
     # ---------- Painel e planilha ----------
     todos = historico.todos()
+    # Reaplica o filtro com as palavras ATUAIS do produtos.csv.
+    # Assim, se a lista de palavras mudar, o painel já reflete isso, inclusive nas pesquisas antigas.
+    regras = {p.nome_busca: p for p in produtos}
+    for a in todos:
+        p = regras.get(a["nome_busca"])
+        if p:
+            a["motivo"] = motivo_descarte(a["titulo"], p.obrigatorias, p.proibidas)
+            a["passou_filtro"] = not a["motivo"]
     resumo = montar_resumo(
         produtos, todos, aviso=aviso,
         contador={"usadas": contador.pesquisas, "limite": config.LIMITE_MENSAL},
