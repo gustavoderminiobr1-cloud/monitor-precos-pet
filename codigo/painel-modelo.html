@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preços do Mercado Pet</title>
+<!--
+  MODELO DO PAINEL. Não edite o arquivo docs/index.html direto:
+  ele é gerado a partir deste modelo toda vez que a ferramenta roda.
+  Os dados entram no lugar de __DADOS__.
+-->
+<style>
+  :root {
+    --fundo: #F3F4F6; --cartao: #FFFFFF; --texto: #111827; --suave: #4B5563;
+    --verde: #15803D; --verde-claro: #DCFCE7;
+    --amarelo: #A16207; --amarelo-claro: #FEF9C3;
+    --vermelho: #B91C1C; --vermelho-claro: #FEE2E2;
+    --cinza-claro: #E5E7EB; --raio: 20px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--fundo); color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 18px; line-height: 1.35;
+  }
+  .pagina { max-width: 1100px; margin: 0 auto; padding: 16px 16px 48px; }
+
+  /* ---------- Topo ---------- */
+  .topo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; }
+  .topo h1 { margin: 0; font-size: 28px; }
+  .data {
+    background: #1F2937; color: #fff; border-radius: 999px; padding: 10px 18px;
+    font-size: 20px; font-weight: 700;
+  }
+  .aviso {
+    margin-top: 14px; background: var(--vermelho); color: #fff; border-radius: 16px;
+    padding: 14px 18px; font-size: 20px; font-weight: 700;
+  }
+  .teste {
+    margin-top: 14px; background: #7C3AED; color: #fff; border-radius: 16px;
+    padding: 10px 18px; font-size: 18px; font-weight: 700;
+  }
+
+  /* ---------- Legenda ---------- */
+  .legenda {
+    margin-top: 14px; background: var(--cartao); border-radius: var(--raio); padding: 12px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .leg {
+    display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px;
+    border-radius: 999px; font-weight: 700; font-size: 17px;
+  }
+  .leg.verde { background: var(--verde-claro); color: var(--verde); }
+  .leg.amarelo { background: var(--amarelo-claro); color: var(--amarelo); }
+  .leg.vermelho { background: var(--vermelho-claro); color: var(--vermelho); }
+  .leg.neutro { background: var(--cinza-claro); color: var(--texto); }
+
+  /* ---------- Setores (tela inicial) ---------- */
+  .setores {
+    margin-top: 18px; display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .setor {
+    border: 0; border-radius: var(--raio); padding: 20px 10px; color: #fff; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    box-shadow: 0 4px 0 rgba(0,0,0,.18); font: inherit; text-align: center;
+  }
+  .setor:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0,0,0,.18); }
+  .setor .icone { font-size: 60px; line-height: 1; }
+  .setor .nome { font-size: 24px; font-weight: 800; text-shadow: 0 1px 2px rgba(0,0,0,.35); }
+  .setor .qtd {
+    font-size: 17px; font-weight: 700; background: rgba(0,0,0,.25); border-radius: 999px;
+    padding: 4px 12px;
+  }
+
+  /* ---------- Dentro do setor ---------- */
+  .barra { margin-top: 18px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .voltar {
+    border: 0; background: #1F2937; color: #fff; border-radius: 999px; padding: 12px 20px;
+    font: inherit; font-size: 20px; font-weight: 700; cursor: pointer;
+  }
+  .titulo-setor {
+    flex: 1; min-width: 200px; margin: 0; color: #fff; border-radius: var(--raio);
+    padding: 10px 18px; font-size: 28px;
+  }
+
+  .podio-caixa { margin-top: 16px; background: var(--cartao); border-radius: var(--raio); padding: 16px; }
+  .podio-caixa h2 { margin: 0; font-size: 24px; text-align: center; }
+  .podio-caixa .nota { text-align: center; color: var(--suave); font-size: 15px; margin-top: 2px; }
+  .podio { display: flex; justify-content: center; align-items: flex-end; gap: 8px; margin-top: 12px; }
+  .degrau { flex: 1; max-width: 200px; text-align: center; }
+  .degrau .medalha { font-size: 44px; line-height: 1; }
+  .degrau .marca { font-size: 19px; font-weight: 800; margin: 4px 0; overflow-wrap: anywhere; }
+  .degrau .bloco {
+    border-radius: 12px 12px 0 0; color: #fff; font-weight: 800; font-size: 26px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ouro .bloco { background: #CA8A04; height: 110px; }
+  .prata .bloco { background: #6B7280; height: 80px; }
+  .bronze .bloco { background: #9A3412; height: 60px; }
+  .degrau .info { font-size: 14px; color: var(--suave); margin-top: 4px; }
+
+  .subgrupo h3 { margin: 24px 0 10px; font-size: 24px; display: flex; align-items: center; gap: 10px; }
+  .subgrupo h3 .ic { font-size: 34px; }
+
+  .produtos { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+  .produto {
+    background: var(--cartao); border-radius: var(--raio); overflow: hidden; cursor: pointer;
+    border: 4px solid var(--cinza-claro); display: flex; flex-direction: column;
+    font: inherit; text-align: left; padding: 0; color: inherit;
+  }
+  .produto.verde { border-color: var(--verde); }
+  .produto.amarelo { border-color: #EAB308; }
+  .produto.vermelho { border-color: var(--vermelho); }
+  .faixa { padding: 8px 14px; font-weight: 800; font-size: 19px; display: flex; gap: 8px; align-items: center; }
+  .faixa.verde { background: var(--verde); color: #fff; }
+  .faixa.amarelo { background: #EAB308; color: #1F2937; }
+  .faixa.vermelho { background: var(--vermelho); color: #fff; }
+  .faixa.neutro { background: var(--cinza-claro); color: var(--texto); }
+  .foto {
+    height: 150px; display: flex; align-items: center; justify-content: center; background: #fff;
+    font-size: 80px;
+  }
+  .foto img { max-height: 140px; max-width: 90%; object-fit: contain; }
+  .corpo { padding: 12px 14px 16px; }
+  .nome-prod { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .rotulo { font-size: 15px; color: var(--suave); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; }
+  .menor { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .menor .valor { font-size: 38px; font-weight: 900; line-height: 1.1; }
+  .seta { font-size: 17px; font-weight: 800; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+  .seta.subiu { background: var(--vermelho-claro); color: var(--vermelho); }
+  .seta.caiu { background: var(--verde-claro); color: var(--verde); }
+  .seta.igual { background: var(--cinza-claro); color: var(--suave); }
+  .loja { font-size: 18px; margin-top: 2px; }
+  .maior { margin-top: 8px; font-size: 18px; color: var(--suave); }
+  .meu { margin-top: 8px; font-size: 18px; background: var(--fundo); border-radius: 12px; padding: 8px 10px; }
+  .tocar { margin-top: 10px; font-size: 16px; color: var(--suave); font-weight: 700; }
+  .aguardando { padding: 18px 14px; font-size: 18px; color: var(--suave); }
+  .vazio { margin-top: 18px; background: var(--cartao); border-radius: var(--raio); padding: 28px; text-align: center; font-size: 22px; }
+
+  /* ---------- Janela com a lista de lojas ---------- */
+  .fundo-janela {
+    position: fixed; inset: 0; background: rgba(0,0,0,.55); display: none;
+    align-items: flex-end; justify-content: center; z-index: 10;
+  }
+  .fundo-janela.aberta { display: flex; }
+  .janela {
+    background: var(--cartao); width: 100%; max-width: 640px; max-height: 88vh; overflow: auto;
+    border-radius: 24px 24px 0 0; padding: 16px;
+  }
+  @media (min-width: 700px) { .fundo-janela { align-items: center; } .janela { border-radius: 24px; } }
+  .fechar {
+    border: 0; background: #1F2937; color: #fff; border-radius: 999px; padding: 12px 20px;
+    font: inherit; font-size: 20px; font-weight: 700; cursor: pointer; width: 100%;
+  }
+  .janela h2 { font-size: 22px; margin: 14px 0 4px; }
+  .oferta {
+    display: flex; gap: 12px; align-items: center; padding: 12px 0;
+    border-bottom: 2px solid var(--cinza-claro);
+  }
+  .oferta .pos { font-size: 26px; font-weight: 900; min-width: 40px; text-align: center; }
+  .oferta .meio { flex: 1; min-width: 0; }
+  .oferta .lj { font-size: 19px; font-weight: 800; }
+  .oferta .tt { font-size: 14px; color: var(--suave); overflow-wrap: anywhere; }
+  .oferta .estrelas { font-size: 15px; }
+  .oferta .pr { font-size: 22px; font-weight: 900; white-space: nowrap; text-align: right; }
+  .oferta a {
+    display: inline-block; margin-top: 4px; background: #2563EB; color: #fff; text-decoration: none;
+    border-radius: 999px; padding: 6px 12px; font-size: 15px; font-weight: 700;
+  }
+  .rodape { margin-top: 28px; text-align: center; color: var(--suave); font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="pagina" id="app"></div>
+
+<div class="fundo-janela" id="fundoJanela">
+  <div class="janela" id="janela" role="dialog" aria-modal="true"></div>
+</div>
+
+<script id="dados" type="application/json">__DADOS__</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById("dados").textContent);
+  const app = document.getElementById("app");
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const reais = v => v == null ? "-" : "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const DIAS = {segunda:"segunda", terca:"terça", quarta:"quarta", quinta:"quinta", sexta:"sexta", sabado:"sábado", domingo:"domingo"};
+
+  const SINAL = {
+    verde:    {ic: "👍", txt: "Bom preço"},
+    amarelo:  {ic: "✋", txt: "Um pouco acima"},
+    vermelho: {ic: "👎", txt: "Caro"},
+    "":       {ic: "📏", txt: "Faixa de preço"},
+  };
+  const SETA = {
+    subiu: "⬆️ Subiu",
+    caiu:  "⬇️ Caiu",
+    igual: "➡️ Igual",
+  };
+
+  function topo() {
+    let h = `<div class="topo"><h1>🐾 Preços do Mercado</h1>
+      <div class="data">📅 Atualizado: ${esc(D.atualizado)}</div></div>`;
+    if (D.modo_teste) h += `<div class="teste">🧪 Dados de TESTE (exemplo, não são preços reais)</div>`;
+    if (D.aviso) h += `<div class="aviso">⚠️ ${esc(D.aviso)}</div>`;
+    h += `<div class="legenda" aria-label="Legenda">
+      <span class="leg verde">🟢 👍 Bom preço</span>
+      <span class="leg amarelo">🟡 ✋ Um pouco acima</span>
+      <span class="leg vermelho">🔴 👎 Caro</span>
+      <span class="leg vermelho">⬆️ Subiu</span>
+      <span class="leg verde">⬇️ Caiu</span>
+      <span class="leg neutro">👆 Toque para ver as lojas</span>
+    </div>`;
+    return h;
+  }
+
+  function telaInicial() {
+    let h = topo() + `<div class="setores">`;
+    for (const s of D.setores) {
+      const qtd = s.total === 0 ? "Sem produtos" : s.total === 1 ? "1 produto" : `${s.total} produtos`;
+      h += `<button class="setor" style="background:${s.cor}" onclick="ir('${s.chave}')">
+        <span class="icone">${s.icone}</span><span class="nome">${esc(s.nome)}</span>
+        <span class="qtd">${qtd}</span></button>`;
+    }
+    h += `</div>`;
+    return h;
+  }
+
+  function podio(s) {
+    const top = s.marcas.slice(0, 3);
+    if (!top.length) return "";
+    const medalhas = [["ouro", "🥇", "1º"], ["prata", "🥈", "2º"], ["bronze", "🥉", "3º"]];
+    const ordem = [1, 0, 2]; // prata, ouro, bronze (ouro no meio)
+    let h = `<div class="podio-caixa"><h2>🏆 Mais procuradas na internet</h2>
+      <div class="nota">É uma estimativa (aparições e avaliações no Google), não é venda real.</div>
+      <div class="podio">`;
+    for (const i of ordem) {
+      const m = top[i];
+      if (!m) continue;
+      const [cls, med, pos] = medalhas[i];
+      h += `<div class="degrau ${cls}"><div class="medalha">${med}</div>
+        <div class="marca">${esc(m.marca)}</div><div class="bloco">${pos}</div>
+        <div class="info">⭐ ${m.avaliacoes.toLocaleString("pt-BR")} avaliações</div></div>`;
+    }
+    return h + `</div></div>`;
+  }
+
+  function cartao(p, s) {
+    if (!p.pesquisado) {
+      return `<div class="produto"><div class="faixa neutro">⏳ Aguardando</div>
+        <div class="foto">${s.icone}</div>
+        <div class="corpo"><div class="nome-prod">${esc(p.nome)}</div>
+        <div class="aguardando">Primeira pesquisa na ${esc(DIAS[p.dia] || p.dia)}</div></div></div>`;
+    }
+    if (p.menor == null) {
+      return `<div class="produto"><div class="faixa neutro">🔍 Nada encontrado</div>
+        <div class="foto">${s.icone}</div>
+        <div class="corpo"><div class="nome-prod">${esc(p.nome)}</div>
+        <div class="aguardando">Nenhum anúncio passou no filtro em ${esc(p.data)}</div></div></div>`;
+    }
+    const sinal = SINAL[p.sinal || ""];
+    const cls = p.sinal || "neutro";
+    const foto = p.imagem
+      ? `<img src="${esc(p.imagem)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${s.icone}'))">`
+      : s.icone;
+    const seta = p.tendencia ? `<span class="seta ${p.tendencia}">${SETA[p.tendencia]}</span>` : "";
+    const meu = p.meu_preco != null
+      ? `<div class="meu">🏪 Meu preço: <b>${reais(p.meu_preco)}</b><br>📊 Média do mercado: <b>${reais(p.media)}</b></div>` : "";
+    return `<button class="produto ${p.sinal}" onclick="abrir(${p.id})">
+      <div class="faixa ${cls}">${sinal.ic} ${sinal.txt}</div>
+      <div class="foto">${foto}</div>
+      <div class="corpo">
+        <div class="nome-prod">${esc(p.nome)}</div>
+        <div class="rotulo">💰 Menor preço</div>
+        <div class="menor"><span class="valor">${reais(p.menor)}</span>${seta}</div>
+        <div class="loja">📍 ${esc(p.loja)}</div>
+        <div class="maior">🔺 Maior: <b>${reais(p.maior)}</b></div>
+        ${meu}
+        <div class="tocar">👆 Toque para ver ${p.ofertas.length} lojas</div>
+      </div></button>`;
+  }
+
+  function telaSetor(chave) {
+    const s = D.setores.find(x => x.chave === chave);
+    if (!s) return telaInicial();
+    let h = topo() + `<div class="barra">
+      <button class="voltar" onclick="ir('')">⬅️ Voltar</button>
+      <h2 class="titulo-setor" style="background:${s.cor}">${s.icone} ${esc(s.nome)}</h2></div>`;
+    h += podio(s);
+    if (!s.total) return h + `<div class="vazio">📭 Nenhum produto neste setor ainda.</div>`;
+    for (const g of s.subgrupos) {
+      h += `<div class="subgrupo"><h3><span class="ic">${g.icone}</span>${esc(g.nome)}</h3><div class="produtos">`;
+      for (const p of g.produtos) h += cartao(p, s);
+      h += `</div></div>`;
+    }
+    return h;
+  }
+
+  window.abrir = function (i) {
+    const p = D.produtos[i];
+    let h = `<button class="fechar" onclick="fechar()">✖ Fechar</button>
+      <h2>${esc(p.nome)}</h2><div class="rotulo">📅 ${esc(p.data)} · do mais barato ao mais caro</div>`;
+    p.ofertas.forEach((o, n) => {
+      const est = o.nota ? `⭐ ${String(o.nota).replace(".", ",")} (${o.avaliacoes} avaliações)` : "";
+      const link = o.link ? `<a href="${esc(o.link)}" target="_blank" rel="noopener">Ver na loja ➜</a>` : "";
+      const pos = ["🥇", "🥈", "🥉"][n] || (n + 1) + "º";
+      h += `<div class="oferta"><div class="pos">${pos}</div>
+        <div class="meio"><div class="lj">${esc(o.loja)}</div><div class="tt">${esc(o.titulo)}</div>
+        <div class="estrelas">${est}</div>${link}</div>
+        <div class="pr">${reais(o.preco)}</div></div>`;
+    });
+    document.getElementById("janela").innerHTML = h;
+    document.getElementById("fundoJanela").classList.add("aberta");
+  };
+  window.fechar = function () { document.getElementById("fundoJanela").classList.remove("aberta"); };
+  document.getElementById("fundoJanela").addEventListener("click", e => { if (e.target.id === "fundoJanela") fechar(); });
+
+  // Navegação: guarda a tela atual e, quando possível, usa o "voltar" do celular
+  let atual = location.hash.replace("#", "");
+  window.ir = function (chave) {
+    atual = chave;
+    try { history.pushState(null, "", chave ? "#" + chave : location.pathname + location.search); } catch (e) {}
+    desenhar();
+  };
+  window.addEventListener("popstate", () => { atual = location.hash.replace("#", ""); desenhar(); });
+
+  function desenhar() {
+    const chave = atual;
+    fechar();
+    app.innerHTML = (chave ? telaSetor(chave) : telaInicial()) +
+      `<div class="rodape">Preços pesquisados no Google Shopping. Pesquisas usadas no mês: ${D.contador.usadas ?? 0} de ${D.contador.limite ?? 0}.</div>`;
+    window.scrollTo(0, 0);
+  }
+  desenhar();
+})();
+</script>
+</body>
+</html>

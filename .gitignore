@@ -1,0 +1,12 @@
+# NUNCA enviar a chave da SerpAPI para o GitHub
+.env
+
+# Saídas do modo teste (ficam só no computador)
+teste/
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Arquivo temporário que o Excel cria quando a planilha está aberta
+~$*

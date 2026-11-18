@@ -1,0 +1,132 @@
+{
+ "_aviso": "RESPOSTA INVENTADA PARA O MODO TESTE. Não são preços reais.",
+ "search_parameters": {
+  "engine": "google_shopping",
+  "q": "Areia sanitária Pipicat Classic 4kg",
+  "gl": "br",
+  "hl": "pt-br"
+ },
+ "shopping_results": [
+  {
+   "position": 1,
+   "title": "Areia Sanitária Pipicat Classic 4kg",
+   "source": "Mercado Livre",
+   "price": "R$ 13,90",
+   "extracted_price": 13.9,
+   "rating": 4.8,
+   "reviews": 6100,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Sanit%C3%A1ria%20Pipicat%20Classic%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 2,
+   "title": "Areia Higiênica Pipicat Classic para Gatos 4 kg",
+   "source": "Petlove",
+   "price": "R$ 14,99",
+   "extracted_price": 14.99,
+   "rating": 4.8,
+   "reviews": 2300,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Higi%C3%AAnica%20Pipicat%20Classic%20para%20Gatos%204%20kg",
+   "thumbnail": null
+  },
+  {
+   "position": 3,
+   "title": "Areia Pipicat Classic 4kg",
+   "source": "Carrefour",
+   "price": "R$ 15,49",
+   "extracted_price": 15.49,
+   "rating": 4.6,
+   "reviews": 180,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Pipicat%20Classic%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 4,
+   "title": "Areia Sanitária Pipicat Classic 4kg Gatos",
+   "source": "Cobasi",
+   "price": "R$ 15,90",
+   "extracted_price": 15.9,
+   "rating": 4.9,
+   "reviews": 1750,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Sanit%C3%A1ria%20Pipicat%20Classic%204kg%20Gatos",
+   "thumbnail": null
+  },
+  {
+   "position": 5,
+   "title": "Areia Higiênica Pipicat Classic - 4kg",
+   "source": "Petz",
+   "price": "R$ 16,99",
+   "extracted_price": 16.99,
+   "rating": 4.8,
+   "reviews": 1320,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Higi%C3%AAnica%20Pipicat%20Classic%20-%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 6,
+   "title": "Areia Sanitária Pipicat Classic 4kg",
+   "source": "Amazon.com.br",
+   "price": "R$ 17,49",
+   "extracted_price": 17.49,
+   "rating": 4.8,
+   "reviews": 8900,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Sanit%C3%A1ria%20Pipicat%20Classic%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 7,
+   "title": "Kit 3 Areia Sanitária Pipicat Classic 4kg",
+   "source": "Mercado Livre",
+   "price": "R$ 41,90",
+   "extracted_price": 41.9,
+   "rating": 4.8,
+   "reviews": 920,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Kit%203%20Areia%20Sanit%C3%A1ria%20Pipicat%20Classic%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 8,
+   "title": "Areia Sanitária Pipicat Classic 12kg",
+   "source": "Cobasi",
+   "price": "R$ 39,90",
+   "extracted_price": 39.9,
+   "rating": 4.9,
+   "reviews": 870,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Sanit%C3%A1ria%20Pipicat%20Classic%2012kg",
+   "thumbnail": null
+  },
+  {
+   "position": 9,
+   "title": "Areia Viva Verde Grãos Finos 4kg",
+   "source": "Petz",
+   "price": "R$ 39,90",
+   "extracted_price": 39.9,
+   "rating": 4.8,
+   "reviews": 3400,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Viva%20Verde%20Gr%C3%A3os%20Finos%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 10,
+   "title": "Areia Higiênica Chalesco Perfumada 4kg",
+   "source": "Amazon.com.br",
+   "price": "R$ 12,90",
+   "extracted_price": 12.9,
+   "rating": 4.5,
+   "reviews": 2600,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Higi%C3%AAnica%20Chalesco%20Perfumada%204kg",
+   "thumbnail": null
+  },
+  {
+   "position": 11,
+   "title": "Areia Kelco Sílica para Gatos 1,6kg",
+   "source": "Petlove",
+   "price": "R$ 44,90",
+   "extracted_price": 44.9,
+   "rating": 4.7,
+   "reviews": 1100,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Areia%20Kelco%20S%C3%ADlica%20para%20Gatos%201%2C6kg",
+   "thumbnail": null
+  }
+ ]
+}

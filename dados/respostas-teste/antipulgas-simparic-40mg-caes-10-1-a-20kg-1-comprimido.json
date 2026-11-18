@@ -1,0 +1,143 @@
+{
+ "_aviso": "RESPOSTA INVENTADA PARA O MODO TESTE. Não são preços reais.",
+ "search_parameters": {
+  "engine": "google_shopping",
+  "q": "Antipulgas Simparic 40mg cães 10,1 a 20kg 1 comprimido",
+  "gl": "br",
+  "hl": "pt-br"
+ },
+ "shopping_results": [
+  {
+   "position": 1,
+   "title": "Antipulgas Simparic 40 mg Cães 10,1 a 20 kg 1 Comprimido",
+   "source": "Amazon.com.br",
+   "price": "R$ 89,90",
+   "extracted_price": 89.9,
+   "rating": 4.9,
+   "reviews": 7400,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20Simparic%2040%20mg%20C%C3%A3es%2010%2C1%20a%2020%20kg%201%20Comprimido",
+   "thumbnail": null
+  },
+  {
+   "position": 2,
+   "title": "Simparic 40mg para Cães de 10,1 a 20kg - 1 Comprimido",
+   "source": "Mercado Livre",
+   "price": "R$ 92,50",
+   "extracted_price": 92.5,
+   "rating": 4.9,
+   "reviews": 3900,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Simparic%2040mg%20para%20C%C3%A3es%20de%2010%2C1%20a%2020kg%20-%201%20Comprimido",
+   "thumbnail": null
+  },
+  {
+   "position": 3,
+   "title": "Antipulgas e Carrapatos Simparic 40 mg 10,1 a 20 kg",
+   "source": "Petlove",
+   "price": "R$ 94,41",
+   "extracted_price": 94.41,
+   "rating": 4.9,
+   "reviews": 2100,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20e%20Carrapatos%20Simparic%2040%20mg%2010%2C1%20a%2020%20kg",
+   "thumbnail": null
+  },
+  {
+   "position": 4,
+   "title": "Simparic 40mg Cães 10,1-20kg 1 Comprimido",
+   "source": "Cobasi",
+   "price": "R$ 96,90",
+   "extracted_price": 96.9,
+   "rating": 4.9,
+   "reviews": 1650,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Simparic%2040mg%20C%C3%A3es%2010%2C1-20kg%201%20Comprimido",
+   "thumbnail": null
+  },
+  {
+   "position": 5,
+   "title": "Antipulgas Simparic 40 mg para Cães de 10,1 a 20 kg",
+   "source": "Petz",
+   "price": "R$ 99,90",
+   "extracted_price": 99.9,
+   "rating": 4.8,
+   "reviews": 1490,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20Simparic%2040%20mg%20para%20C%C3%A3es%20de%2010%2C1%20a%2020%20kg",
+   "thumbnail": null
+  },
+  {
+   "position": 6,
+   "title": "Simparic 40mg 1 comprimido",
+   "source": "Magazine Luiza",
+   "price": "R$ 101,90",
+   "extracted_price": 101.9,
+   "rating": 4.7,
+   "reviews": 330,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Simparic%2040mg%201%20comprimido",
+   "thumbnail": null
+  },
+  {
+   "position": 7,
+   "title": "Antipulgas Simparic 40 mg Cães 10,1 a 20 kg 3 Comprimidos",
+   "source": "Petz",
+   "price": "R$ 259,90",
+   "extracted_price": 259.9,
+   "rating": 4.9,
+   "reviews": 2040,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20Simparic%2040%20mg%20C%C3%A3es%2010%2C1%20a%2020%20kg%203%20Comprimidos",
+   "thumbnail": null
+  },
+  {
+   "position": 8,
+   "title": "Antipulgas Simparic 20mg Cães 5,1 a 10kg 1 Comprimido",
+   "source": "Cobasi",
+   "price": "R$ 84,90",
+   "extracted_price": 84.9,
+   "rating": 4.9,
+   "reviews": 1200,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20Simparic%2020mg%20C%C3%A3es%205%2C1%20a%2010kg%201%20Comprimido",
+   "thumbnail": null
+  },
+  {
+   "position": 9,
+   "title": "Antipulgas NexGard Cães 10,1 a 25kg 1 Tablete",
+   "source": "Amazon.com.br",
+   "price": "R$ 79,90",
+   "extracted_price": 79.9,
+   "rating": 4.9,
+   "reviews": 11200,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20NexGard%20C%C3%A3es%2010%2C1%20a%2025kg%201%20Tablete",
+   "thumbnail": null
+  },
+  {
+   "position": 10,
+   "title": "Antipulgas Bravecto Cães 10 a 20kg 500mg",
+   "source": "Petlove",
+   "price": "R$ 239,90",
+   "extracted_price": 239.9,
+   "rating": 4.9,
+   "reviews": 6800,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20Bravecto%20C%C3%A3es%2010%20a%2020kg%20500mg",
+   "thumbnail": null
+  },
+  {
+   "position": 11,
+   "title": "Antipulgas Credeli Cães 11 a 22kg 450mg",
+   "source": "Cobasi",
+   "price": "R$ 99,90",
+   "extracted_price": 99.9,
+   "rating": 4.8,
+   "reviews": 2500,
+   "link": "https://www.google.com.br/search?tbm=shop&q=Antipulgas%20Credeli%20C%C3%A3es%2011%20a%2022kg%20450mg",
+   "thumbnail": null
+  },
+  {
+   "position": 12,
+   "title": "NexGard Spectra Cães 7,6 a 15kg",
+   "source": "Petz",
+   "price": "R$ 119,90",
+   "extracted_price": 119.9,
+   "rating": 4.8,
+   "reviews": 3100,
+   "link": "https://www.google.com.br/search?tbm=shop&q=NexGard%20Spectra%20C%C3%A3es%207%2C6%20a%2015kg",
+   "thumbnail": null
+  }
+ ]
+}
